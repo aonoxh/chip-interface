@@ -1,3 +1,5 @@
 *.html
 prepros-6.config
 security.jpg
+test.js
+node_modules
