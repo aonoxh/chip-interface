@@ -1,0 +1,83 @@
+html
+	head
+		title C.H.I.P - GPIO
+		link(rel="stylesheet",href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css")
+		script(src="https://code.jquery.com/jquery-3.2.1.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js")
+	body.row
+		nav.blue-grey.darken-4
+			ul.right
+				li
+					a(href="/") Inicio
+				li
+					a(href="#") G.P.I.O
+				li
+					a(href="camera.html") Camara
+				li
+					a(href="#file") Archivos
+				li
+					a(hreF="setup.html") Configuraciones
+		#file.modal.bottom-sheet
+			.modal-content
+				h4 Subir archivo
+				.file-field.input-field
+					.btn
+						span File
+						input(type="file")
+					.file-path-wrapper
+						input.file-path.validate(type="text")
+			.modal-footer
+				a.modal-action.modal-close.waves-effect.waves-green.btn-flat(href="#!") OK
+		br
+		.collection.pins-switches.col.s10.offset-s1
+			h4 Switchs G.P.I.O
+			.divider
+			table.centered
+				thead
+					tr
+						th Pin
+						th Off/On
+						th Input/Output
+						th State
+				tbody
+					each pin in ["XIO-P0", "XIO-P1","XIO-P2","XIO-P3","XIO-P4","XIO-P5", "XIO-P6","XIO-P7"]
+						tr(class=pin)
+							td #{pin}
+							td
+								.switch
+									label
+										|
+										input.state(class=pin,type="checkbox")
+										span.lever
+										|
+							td.input-field
+								select.io(class=pin)
+									option(value="", disabled="", selected="") 
+									option(value="0") Input
+									option(value="1") Output
+								label 
+							td
+								p(class=pin) Estoy prendido
+		script(type="text/javascript").
+			$('.modal').modal();
+			$('select').material_select();
+			$('select.io').change(function(){
+				let select = $($(this)[0]);
+				let pin = GPIO(select);
+				let value = $(this).val();
+				if(value == "0"){
+					$('input.'+pin).prop('disabled', true);
+				}else{
+					$('input.'+pin).prop('disabled', false);
+				}
+			});
+			$('input.state').change(function(){
+				let cb = $($(this)[0]);
+				let pin = GPIO(cb);
+				let value = cb.prop('checked');
+				console.log(pin + "-" + value);
+			});
+
+			function GPIO(obj){
+				return obj[0].className.split(" ")[1];
+			}

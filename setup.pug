@@ -1,0 +1,47 @@
+html
+	head
+		title C.H.I.P - Setup
+		link(rel="stylesheet",href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css")
+		script(src="https://code.jquery.com/jquery-3.2.1.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js")
+	body.row
+		nav.nav-extended.blue-grey.darken-4
+			.nav-wrapper
+				ul.right
+					li
+						a(href="/") Inicio
+					li
+						a(href="gpio.html") G.P.I.O
+					li
+						a(href="camera.html") Camara
+					li
+						a(href="#file") Archivos
+					li
+						a(hreF="#") Configuraciones
+			.nav-content
+				ul.tabs.tabs-transparent
+					li.tab
+						a(href="#setup-temperature") Temperatura
+					li.tab
+						a(href="#setup-gpio") GPIO
+					li.tab
+						a(href="#setup-files") Archivos
+					li.tab
+						a(href="#setup-camera") Camara
+		#file.modal.bottom-sheet
+			.modal-content
+				h4 Subir archivo
+				.file-field.input-field
+					.btn
+						span File
+						input(type="file")
+					.file-path-wrapper
+						input.file-path.validate(type="text")
+			.modal-footer
+				a.modal-action.modal-close.waves-effect.waves-green.btn-flat(href="#!") OK
+		div#setup-temperature
+		div#setup-gpio
+		div#setup-files
+		div#setup-camera
+		script(type="text/javascript").
+			$('.modal').modal();

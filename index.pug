@@ -1,0 +1,61 @@
+html
+	head
+		title C.H.I.P - Home
+		link(rel="stylesheet",href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css")
+		script(src="https://code.jquery.com/jquery-3.2.1.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js")
+		style().
+			.padding{
+				padding: 25px;
+			}
+	body.row
+		nav.blue-grey.darken-4
+			ul.right
+				li
+					a(href="#") Inicio
+				li
+					a(href="gpio.html") G.P.I.O
+				li
+					a(href="camera.html") Camara
+				li
+					a(href="#file") Archivos
+				li
+					a(hreF="setup.html") Configuraciones
+		#file.modal.bottom-sheet
+			.modal-content
+				h4 Subir archivo
+				.file-field.input-field
+					.btn
+						span File
+						input(type="file")
+					.file-path-wrapper
+						input.file-path.validate(type="text")
+			.modal-footer
+				a.modal-action.modal-close.waves-effect.waves-green.btn-flat(href="#!") OK
+		.cards.padding
+			.card.col.s2.m3.l2.card-light.white-text.red.darken-1
+				.card-content
+					span.card-title Temperatura
+					p.temperature 46.6 C°
+			.card.col.s4.m4.l3.xl2.offset-s1.offset-m1.offset-l1.offset-xl1.card-light.white-text.amber
+				.card-content
+					span.card-title Luz externa
+					p Descripción de mi luz externa
+				.card-action
+					.switch
+						label.white-text
+							| Apagada
+							input(type="checkbox", onchange="light(this)")
+							span.lever
+							| Encendida
+			.card.col.s12.blue-grey
+				video.responsive-video(controls)
+					source(src="/camera", type="video/mp4")
+		script(type="text/javascript").
+			$('.modal').modal();
+			function light(o){
+				let val = $(o).prop('checked');
+				
+			}
+
+			$('.temperature').text("46.5 C°");
