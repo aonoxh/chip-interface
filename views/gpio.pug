@@ -41,7 +41,7 @@ html
 						th Input/Output
 						th State
 				tbody
-					each pin in ["XIO-P0", "XIO-P1","XIO-P2","XIO-P3","XIO-P4","XIO-P5", "XIO-P6","XIO-P7"]
+					each pin in ["GPIO-0", "GPIO-1","GPIO-2","GPIO-3","GPIO-4","GPIO-5", "GPIO-6","GPIO-7"]
 						tr(class=pin)
 							td #{pin}
 							td
@@ -59,6 +59,7 @@ html
 								label 
 							td
 								p(class=pin) Estoy prendido
+			p.red-text *GPIO-X is equivalent to XIO-X*
 		script(type="text/javascript").
 			$('.modal').modal();
 			$('select').material_select();
