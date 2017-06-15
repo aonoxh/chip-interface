@@ -1,0 +1,28 @@
+{
+	"name": "chip-interface",
+	"version": "0.0.1-alpha-01",
+	"description": "nothing jet",
+	"main": "server.js",
+	"dependencies": {
+		"express": "^4.15.3",
+		"gpio-c.h.i.p": "*",
+		"node-webcam": "*"
+	},
+	"devDependencies": {},
+	"scripts": {
+		"start": "node server.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/aonoxh/chip-interface.git"
+  	},
+	"keywords": [
+		"chip"
+	],
+	"author": "aonoxh",
+	"license": "UNLICENSED",
+	"bugs": {
+		"url": "https://github.com/aonoxh/chip-interface/issues"
+	},
+	"homepage": "https://github.com/aonoxh/chip-interface#readme"
+}

@@ -13,15 +13,15 @@ html
 		nav.blue-grey.darken-4
 			ul.right
 				li
-					a(href="#") Inicio
+					a(href="#") Home
 				li
 					a(href="gpio") G.P.I.O
 				li
-					a(href="camera") Camara
+					a(href="camera") Camera
 				li
-					a(href="#file") Archivos
+					a(href="#file") Files
 				li
-					a(hreF="setup") Configuraciones
+					a(hreF="setup") Setup
 		#file.modal.bottom-sheet
 			.modal-content
 				h4 Subir archivo
@@ -36,19 +36,18 @@ html
 		.cards.padding
 			.card.col.s2.m3.l2.card-light.white-text.red.darken-1
 				.card-content
-					span.card-title Temperatura
+					span.card-title Temperature
 					p.temperature #{temperature}
 			.card.col.s4.m4.l3.xl2.offset-s1.offset-m1.offset-l1.offset-xl1.card-light.white-text.amber
 				.card-content
-					span.card-title Luz externa
-					p Descripción de mi luz externa
+					span.card-title Light garage
 				.card-action
 					.switch
 						label.white-text
-							| Apagada
+							| Off
 							input(type="checkbox", onchange="light(this)")
 							span.lever
-							| Encendida
+							| On
 			.card.col.s12.blue-grey
 				img.camera(src="")
 		script(type="text/javascript").

@@ -9,18 +9,18 @@ html
 		nav.blue-grey.darken-4
 			ul.right
 				li
-					a(href="/") Inicio
+					a(href="/") Home
 				li
 					a(href="#") G.P.I.O
 				li
-					a(href="camera") Camara
+					a(href="camera") Camera
 				li
-					a(href="#file") Archivos
+					a(href="#file") File
 				li
-					a(hreF="setup") Configuraciones
+					a(hreF="setup") Setup
 		#file.modal.bottom-sheet
 			.modal-content
-				h4 Subir archivo
+				h4 Upload file
 				.file-field.input-field
 					.btn
 						span File
@@ -53,12 +53,11 @@ html
 										|
 							td.input-field
 								select.io(class=pin)
-									option(value="", disabled="", selected="") 
 									option(value="0") Input
-									option(value="1") Output
+									option(value="1", selected="") Output
 								label 
 							td
-								p(class=pin) Estoy prendido
+								p(class=pin) Off
 			p.red-text *GPIO-X is equivalent to XIO-X*
 		script(type="text/javascript").
 			$('.modal').modal();
