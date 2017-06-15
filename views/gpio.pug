@@ -75,9 +75,19 @@ html
 			});
 			$('input.state').change(function(){
 				let cb = $($(this)[0]);
-				let pin = GPIO(cb);
-				let value = cb.prop('checked');
-				console.log(pin + "-" + value);
+				let pin_complete = GPIO(cb);
+				let pin = pin_complete.split('-')[1];
+				let value = (cb.prop('checked') == true) ? 1 : 0;
+				let io = $('select.io.'+pin_complete)[0].value;
+				if(io == ""){
+					return null;
+				}
+				let fio = (io == "1") ? "out": "in";
+				let url = "api/gpio/" + pin + "/" + fio +"/" + value;
+				$.ajax({
+					url: url,
+					method: "POST"
+				});
 			});
 
 			function GPIO(obj){

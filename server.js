@@ -7,15 +7,15 @@ const GPIO = require("gpio-c.h.i.p");
 const wc = require('node-webcam');
 
 var opts = {
-    width: 1280,
-    height: 720,
-    quality: 100,
-    delay: 0,
-    saveShots: false,
-    output: "jpeg",
-    device: false,
-    callbackReturn: "base64",
-    verbose: false
+	width: 1280,
+	height: 720,
+	quality: 100,
+	delay: 0,
+	saveShots: false,
+	output: "jpeg",
+	device: false,
+	callbackReturn: "base64",
+	verbose: false
 };
 
 server.listen(80);
